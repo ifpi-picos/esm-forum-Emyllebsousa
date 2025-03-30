@@ -1,0 +1,26 @@
+class RepositorioMemoria {
+    constructor() {
+      this.perguntas = [
+        { id_pergunta: 1, texto: 'Qual sua cor favorita?' },
+        { id_pergunta: 2, texto: 'Qual seu hobby?' }
+      ];
+      this.respostas = [
+        { id_pergunta: 1, texto: 'Azul' },
+        { id_pergunta: 2, texto: 'Leitura' }
+      ];
+    }
+  
+    async recuperar_todas_perguntas() {
+      return this.perguntas;
+    }
+  
+    async recuperar_num_respostas(id_pergunta) {
+      const respostas = this.respostas.filter(resposta => resposta.id_pergunta === id_pergunta);
+      return respostas.length;
+    }
+  
+    // Outras funções para manipular dados em memória
+  }
+  
+  module.exports = RepositorioMemoria;
+  
